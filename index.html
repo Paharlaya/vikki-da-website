@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikki's Test Site</title>
+    <title>Vikki Da's World - Coming Soon!</title>
     <style>
         * {
             margin: 0;
@@ -13,106 +13,327 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated stars background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
         }
 
         .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px;
-            max-width: 600px;
             text-align: center;
-            animation: fadeIn 0.6s ease-in;
+            z-index: 10;
+            padding: 40px;
+            max-width: 800px;
+            animation: float 3s ease-in-out infinite;
         }
 
-        h1 {
-            color: #764ba2;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
-        p {
-            font-size: 1.2em;
-            color: #666;
+        .main-title {
+            font-size: 4em;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
             margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        .success-badge {
-            display: inline-block;
-            background: #10b981;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            animation: pulse 2s infinite;
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .footer {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid #f0f0f0;
-            color: #999;
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            min-width: 120px;
+            transition: transform 0.3s;
+        }
+
+        .countdown-item:hover {
+            transform: scale(1.1) rotateZ(5deg);
+        }
+
+        .countdown-number {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff006e, #8338ec);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .countdown-label {
+            color: rgba(255,255,255,0.8);
             font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .message {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3em;
+            margin: 40px 0;
+            animation: pulse-text 2s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-            }
+        @keyframes pulse-text {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .loading-bar {
+            width: 300px;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin: 30px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff);
+            border-radius: 10px;
+            animation: loading 2s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 0%; }
+        }
+
+        .surprise-text {
+            color: #06ffa5;
+            font-size: 1.1em;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeInOut 3s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .glitch {
+            position: relative;
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 3px;
+            margin: 30px 0;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: "VIKKI DA'S SITE";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            color: #06ffa5;
+            z-index: -1;
+        }
+
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            color: #ff006e;
+            z-index: -2;
+        }
+
+        @keyframes glitch-1 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(20% 0 30% 0); transform: translate(-2px, 2px); }
+            40% { clip-path: inset(50% 0 20% 0); transform: translate(2px, -2px); }
+            60% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 0); }
+            80% { clip-path: inset(70% 0 10% 0); transform: translate(2px, 2px); }
+        }
+
+        @keyframes glitch-2 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(30% 0 20% 0); transform: translate(2px, -2px); }
+            40% { clip-path: inset(20% 0 50% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(60% 0 10% 0); transform: translate(2px, 0); }
+            80% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, -2px); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 40px 30px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 1.1em;
-            }
+            .main-title { font-size: 2.5em; }
+            .countdown-number { font-size: 2em; }
+            .countdown-container { gap: 15px; }
+            .countdown-item { padding: 20px; min-width: 80px; }
         }
     </style>
 </head>
 <body>
+    <div class="stars" id="stars"></div>
+
     <div class="container">
-        <h1>Welcome to Vikki's Site!</h1>
-        <p>
-            Congratulations! Your GitHub Pages site has been successfully deployed and is now live on the web.
-        </p>
-        <div class="success-badge">
-            ✓ Deployment Successful
+        <h1 class="main-title">Vikki Da's World</h1>
+
+        <div class="glitch" data-text="LAUNCHING SOON">LAUNCHING SOON</div>
+
+        <div style="font-size: 2em; margin: 20px 0;">
+            <span style="animation: bounce 1s infinite;">✨</span>
+            <span style="color: #ff69b4; font-weight: bold;">Hey Vikki Da!</span>
+            <span style="animation: bounce 1s infinite; animation-delay: 0.5s;">✨</span>
         </div>
-        <div class="footer">
-            <p>This is a test deployment for GitHub Pages hosting.</p>
-            <p>Ready for custom domain configuration!</p>
+
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+
+        <div class="message">
+            Vikki Da, your incredible digital space is being crafted with love...
+        </div>
+
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+
+        <div class="surprise-text">
+            Vikki Da's amazing journey begins here! 🌟
+        </div>
+
+        <div style="margin-top: 30px; color: #ff69b4; font-size: 1.2em; opacity: 0.8;">
+            Made especially for you, Vikki Da 💖
         </div>
     </div>
+
+    <script>
+        // Create random stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 100;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 10 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        createStars();
+
+        // Countdown timer - set to 24 hours from now
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const launchDate = now + (24 * 60 * 60 * 1000); // 24 hours from now
+
+            setInterval(function() {
+                const currentTime = new Date().getTime();
+                const distance = launchDate - currentTime;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+                if (distance < 0) {
+                    document.querySelector('.main-title').textContent = 'VIKKI DA IS LIVE!';
+                    document.querySelector('.message').textContent = 'Welcome to Vikki Da\'s world!';
+                }
+            }, 1000);
+        }
+
+        updateCountdown();
+
+        // Add some interactivity
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            document.body.style.background = `
+                radial-gradient(circle at ${x * 100}% ${y * 100}%,
+                rgba(131, 56, 236, 0.3) 0%,
+                rgba(0, 0, 0, 1) 50%)
+            `;
+        });
+    </script>
 </body>
 </html>
