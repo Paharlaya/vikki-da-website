@@ -1,0 +1,1052 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: #0B1F3A;
+    background: #FFFFFF;
+    line-height: 1.8;
+    overflow-x: hidden;
+    /* Optimize rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 25px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: background-color, padding, backdrop-filter;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(11, 31, 58, 0.05);
+    padding: 20px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-main {
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    color: #0B1F3A;
+}
+
+.logo-sub {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+    color: #6B7280;
+    font-weight: 300;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #0B1F3A;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #D62828;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #0B1F3A;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Intro Section */
+.intro {
+    margin-top: 140px;
+    padding: 60px 40px 80px;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.intro-title {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    color: #1a2332;
+}
+
+.intro-subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.intro-image {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    background-color: #f8f9fa;
+}
+
+/* Section Divider */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    gap: 30px;
+}
+
+.divider-line {
+    width: 60px;
+    height: 1px;
+    background: #F4B400;
+    opacity: 0.4;
+}
+
+.divider-text {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #6B7280;
+}
+
+/* Tours Section */
+.tours {
+    padding: 0 40px 100px;
+}
+
+.tours-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+/* Tour Card */
+.tour-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(11, 31, 58, 0.05);
+}
+
+.tour-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(11, 31, 58, 0.08);
+    border-color: transparent;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+    /* Prevent layout shift */
+    background-color: #f8f9fa;
+}
+
+.tour-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #0B1F3A;
+}
+
+.card-duration {
+    font-size: 13px;
+    font-weight: 400;
+    color: #D62828;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6B7280;
+    margin-bottom: 20px;
+}
+
+.card-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #0B1F3A;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.card-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #D62828;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.tour-card:hover .card-link::after {
+    transform: scaleX(1);
+}
+
+/* About Section */
+.about {
+    padding: 0 40px 100px;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-label {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #6B7280;
+    text-transform: uppercase;
+}
+
+.contact-value {
+    font-size: 18px;
+    font-weight: 300;
+    color: #0B1F3A;
+    letter-spacing: 0.5px;
+}
+
+/* WhatsApp Button */
+.whatsapp-main-btn,
+.whatsapp-btn {
+    background: #0B1F3A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.whatsapp-main-btn:hover,
+.whatsapp-btn:hover {
+    background: #D62828;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid rgba(11, 31, 58, 0.05);
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #6B7280;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+    .tours-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+    }
+
+    .intro-title {
+        font-size: 56px;
+    }
+
+    .intro-subtitle {
+        font-size: 22px;
+    }
+}
+
+/* Medium-large screens (small desktops, large laptops) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+    .nav-container {
+        padding: 0 30px;
+    }
+
+    .tours-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .intro-title {
+        font-size: 48px;
+    }
+}
+
+/* Tablets (landscape and portrait) */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .nav-container {
+        padding: 0 25px;
+    }
+
+    .logo-main {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .nav-links {
+        gap: 30px;
+    }
+
+    .intro {
+        padding: 50px 25px 70px;
+        margin-top: 120px;
+    }
+
+    .intro-title {
+        font-size: 42px;
+    }
+
+    .intro-subtitle {
+        font-size: 18px;
+    }
+
+    .intro-image img {
+        height: 380px;
+    }
+
+    .tours {
+        padding: 0 25px 90px;
+    }
+
+    .tours-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+    .about {
+        padding: 0 25px 90px;
+    }
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .contact-info {
+        margin: 50px 0;
+        gap: 25px;
+    }
+}
+
+/* Mobile Phones (portrait and landscape) */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        gap: 30px;
+        transition: left 0.3s ease;
+        z-index: 999;
+        border-top: 1px solid rgba(11, 31, 58, 0.1);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-link {
+        font-size: 18px;
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(11, 31, 58, 0.1);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .logo-main {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .logo-sub {
+        font-size: 10px;
+        margin-top: 2px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Intro section */
+    .intro {
+        margin-top: 90px;
+        padding: 30px 20px 50px;
+    }
+
+    .intro-content {
+        margin-bottom: 40px;
+    }
+
+    .intro-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .intro-subtitle {
+        font-size: 16px;
+    }
+
+    .intro-image {
+        max-width: 100%;
+    }
+
+    .intro-image img {
+        height: 250px;
+        border-radius: 8px;
+    }
+
+    /* Section dividers */
+    .section-divider {
+        padding: 50px 20px;
+        gap: 20px;
+    }
+
+    .divider-line {
+        width: 40px;
+    }
+
+    .divider-text {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    /* Tours section */
+    .tours {
+        padding: 0 20px 70px;
+    }
+
+    .tours-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    .card-title {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .card-duration {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .card-description {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .card-link {
+        font-size: 13px;
+    }
+
+    /* About section */
+    .about {
+        padding: 0 20px 70px;
+    }
+
+    .about-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .about-text {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .contact-info {
+        margin: 40px 0;
+        gap: 20px;
+    }
+
+    .contact-label {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .contact-value {
+        font-size: 15px;
+    }
+
+    /* Buttons */
+    .whatsapp-main-btn,
+    .whatsapp-btn {
+        width: 100%;
+        padding: 16px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 20px 0;
+    }
+
+    .navbar.scrolled {
+        padding: 15px 0;
+    }
+
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo-main {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .logo-sub {
+        font-size: 9px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .intro {
+        margin-top: 80px;
+        padding: 25px 15px 40px;
+    }
+
+    .intro-title {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+
+    .intro-subtitle {
+        font-size: 14px;
+    }
+
+    .intro-image img {
+        height: 220px;
+    }
+
+    .section-divider {
+        padding: 40px 15px;
+    }
+
+    .tours {
+        padding: 0 15px 60px;
+    }
+
+    .tours-grid {
+        gap: 20px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .about {
+        padding: 0 15px 60px;
+    }
+
+    .about-title {
+        font-size: 24px;
+    }
+
+    .about-text {
+        font-size: 14px;
+    }
+
+    .contact-value {
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 25px 15px;
+    }
+}
+
+/* Itinerary Pages Mobile Styles */
+@media (max-width: 768px) {
+    .itinerary-content {
+        padding: 20px;
+        margin-top: 80px;
+    }
+
+    .package-header {
+        margin-bottom: 40px;
+    }
+
+    .package-code {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .package-title {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .package-duration {
+        font-size: 14px;
+    }
+
+    .hero-image {
+        height: 250px;
+        margin-bottom: 40px;
+        border-radius: 8px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .day-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .day-content {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .info-list li {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+
+    .itinerary-nav {
+        padding: 0 20px;
+    }
+
+    .back-link {
+        font-size: 13px;
+    }
+
+    .cta-section {
+        padding: 40px 15px;
+        margin-top: 40px;
+    }
+
+    .cta-title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .cta-subtitle {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .itinerary-content {
+        padding: 15px;
+        margin-top: 70px;
+    }
+
+    .package-title {
+        font-size: 24px;
+    }
+
+    .hero-image {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .day-title {
+        font-size: 15px;
+    }
+
+    .day-content {
+        font-size: 13px;
+    }
+
+    .itinerary-nav {
+        padding: 0 15px;
+    }
+
+    .cta-section {
+        padding: 30px 10px;
+    }
+
+    .cta-title {
+        font-size: 18px;
+    }
+}
+
+/* Itinerary Page Styles */
+.itinerary-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(11, 31, 58, 0.05);
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.itinerary-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    font-size: 14px;
+    color: #0B1F3A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-link:hover {
+    color: #D62828;
+}
+
+.itinerary-content {
+    margin-top: 100px;
+    padding: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.package-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.package-code {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #D62828;
+    margin-bottom: 10px;
+}
+
+.package-title {
+    font-size: 42px;
+    font-weight: 300;
+    color: #0B1F3A;
+    margin-bottom: 10px;
+}
+
+.package-duration {
+    font-size: 16px;
+    color: #6B7280;
+}
+
+.hero-image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 60px;
+    display: block;
+    background-color: #f8f9fa;
+}
+
+.itinerary-section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #0B1F3A;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(244, 180, 0, 0.3);
+}
+
+.day-item {
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 2px solid rgba(244, 180, 0, 0.3);
+}
+
+.day-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: #0B1F3A;
+    margin-bottom: 10px;
+}
+
+.day-content {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6B7280;
+}
+
+.day-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.day-content li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.day-content li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #F4B400;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: #6B7280;
+    border-bottom: 1px solid rgba(11, 31, 58, 0.05);
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(244, 180, 0, 0.03);
+    border-radius: 12px;
+    margin-top: 60px;
+}
+
+.cta-title {
+    font-size: 24px;
+    font-weight: 300;
+    color: #0B1F3A;
+    margin-bottom: 10px;
+}
+
+.cta-subtitle {
+    font-size: 15px;
+    color: #6B7280;
+    margin-bottom: 30px;
+}
