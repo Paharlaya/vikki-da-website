@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // General inquiry from main page
 function openGeneralInquiry() {
-    const phone = '919564827858';
+    const phone = '919002153003';
     const message = 'Hello, I would like to know more about your tour packages.';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -86,15 +86,15 @@ function openGeneralInquiry() {
 
 // Specific tour inquiry from itinerary pages
 function openWhatsAppInquiry(code, name) {
-    const phone = '919564827858';
+    const phone = '919002153003';
     const message = `Interested in ${code} - ${name}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
 
-// Handle WhatsApp button clicks on itinerary pages
+// Handle WhatsApp button clicks on itinerary pages and card Book Now buttons
 document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('whatsapp-btn')) {
+    if (e.target.classList.contains('whatsapp-btn') || e.target.classList.contains('card-book-btn')) {
         const code = e.target.getAttribute('data-code');
         const name = e.target.getAttribute('data-name');
 
@@ -150,7 +150,7 @@ function toggleMobileMenu() {
 
 // Open WhatsApp Chat
 function openWhatsAppChat() {
-    const phone = '919564827858';
+    const phone = '919002153003';
     const message = 'Hello, I would like to know more about your tour packages.';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -158,7 +158,7 @@ function openWhatsAppChat() {
 
 // Make Phone Call
 function makePhoneCall() {
-    window.location.href = 'tel:+919564827858';
+    window.location.href = 'tel:+919002153003';
 }
 
 // Modal Functions
@@ -185,7 +185,7 @@ function submitInquiry(event) {
 
     // Format message for WhatsApp
     const fullMessage = `Subject: ${subject}\n\nMessage: ${message}`;
-    const phone = '919564827858';
+    const phone = '919002153003';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(fullMessage)}`;
 
     // Open WhatsApp
