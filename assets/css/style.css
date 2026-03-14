@@ -204,7 +204,7 @@ a {
 
 .intro-content {
     max-width: 800px;
-    margin: 0 auto 30px;
+    margin: 0 auto 10px;
 }
 
 .intro-title {
@@ -237,15 +237,15 @@ a {
 }
 
 .intro-image {
-    max-width: 825px;
-    margin: 0 auto;
+    max-width: 630px;
+    margin: -20px auto 0;
     overflow: hidden;
     border-radius: 12px;
 }
 
 .intro-image img {
     width: 100%;
-    height: 420px;
+    height: 320px;
     object-fit: cover;
     display: block;
     background-color: #f8f9fa;
@@ -806,11 +806,12 @@ a {
     }
 
     .intro-image {
-        max-width: 600px;
+        max-width: 460px;
+        margin-top: -15px;
     }
 
     .intro-image img {
-        height: 320px;
+        height: 244px;
     }
 
     .tours {
@@ -906,7 +907,7 @@ a {
     }
 
     .intro-content {
-        margin-bottom: 25px;
+        margin-bottom: 10px;
     }
 
     .intro-title {
@@ -923,7 +924,7 @@ a {
     }
 
     .intro-image img {
-        height: 220px;
+        height: 168px;
         border-radius: 8px;
     }
 
