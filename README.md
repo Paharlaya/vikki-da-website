@@ -3,7 +3,7 @@
 A modern, minimalist travel website for Depemblim Tours & Travels, offering curated travel experiences across the Eastern Himalayas - Darjeeling, Sikkim, and Bhutan.
 
 ## 🌍 Live Site
-Visit: [https://vikki-da-site.github.io/](https://vikki-da-site.github.io/)
+Visit: [https://depemblin.com](https://depemblin.com)
 
 ## 🏔️ About
 Depemblim Tours & Travels has been crafting journeys through the Eastern Himalayas since 2016. Based in Darjeeling, we specialize in personalized travel experiences across North Bengal and Sikkim's hill stations.
