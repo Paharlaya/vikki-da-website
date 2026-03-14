@@ -32,20 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Smooth scroll for navigation links
+    // Smooth scroll for navigation links (only internal links)
     navLinkElements.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const href = this.getAttribute('href');
 
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            // Only prevent default for internal anchor links
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // External links (like Asraya Homestay) will work normally
         });
     });
 
@@ -78,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // General inquiry from main page
 function openGeneralInquiry() {
-    const phone = '919002153003';
+    const phone = '919564827858';
     const message = 'Hello, I would like to know more about your tour packages.';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -86,7 +91,7 @@ function openGeneralInquiry() {
 
 // Specific tour inquiry from itinerary pages
 function openWhatsAppInquiry(code, name) {
-    const phone = '919002153003';
+    const phone = '919564827858';
     const message = `Interested in ${code} - ${name}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -150,7 +155,7 @@ function toggleMobileMenu() {
 
 // Open WhatsApp Chat
 function openWhatsAppChat() {
-    const phone = '919002153003';
+    const phone = '919564827858';
     const message = 'Hello, I would like to know more about your tour packages.';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -158,7 +163,7 @@ function openWhatsAppChat() {
 
 // Make Phone Call
 function makePhoneCall() {
-    window.location.href = 'tel:+919002153003';
+    window.location.href = 'tel:+919564827858';
 }
 
 // Modal Functions
@@ -185,7 +190,7 @@ function submitInquiry(event) {
 
     // Format message for WhatsApp
     const fullMessage = `Subject: ${subject}\n\nMessage: ${message}`;
-    const phone = '919002153003';
+    const phone = '919564827858';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(fullMessage)}`;
 
     // Open WhatsApp

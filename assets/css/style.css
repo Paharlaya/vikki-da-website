@@ -412,7 +412,7 @@ a {
 .card-buttons {
     display: flex;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 /* About Section */
@@ -745,6 +745,25 @@ a {
     font-size: 12px;
     opacity: 0.5;
     letter-spacing: 0.5px;
+}
+
+.footer-signature {
+    margin-top: 8px;
+    font-size: 11px;
+    opacity: 0.4;
+    text-align: center;
+}
+
+.footer-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 @keyframes fadeIn {
