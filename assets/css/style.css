@@ -340,9 +340,6 @@ a {
 
 .card-content {
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
 .card-title {
@@ -365,7 +362,6 @@ a {
     line-height: 1.6;
     color: #6B7280;
     margin-bottom: 20px;
-    flex-grow: 1;
 }
 
 .card-link {
@@ -416,8 +412,7 @@ a {
 .card-buttons {
     display: flex;
     gap: 8px;
-    margin-top: auto;
-    padding-top: 10px;
+    margin-top: 10px;
 }
 
 /* About Section */
