@@ -23,7 +23,7 @@ Come and explore the beauty of Darjeeling with De’Pemblin
 
 CONTACT US
 
-Mobile no: 9564827858/7001588400
+Mobile no: 9564827858
 Address: Vallima Cottage, Hooker Road, Darjeeling – 734101, West Bengal
 Email: depemblin@gmail.com
 Website: www.depemblin.com
