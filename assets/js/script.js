@@ -53,23 +53,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.getElementById('navbar');
     let scrollTimeout;
 
-    window.addEventListener('scroll', function() {
-        // Clear previous timeout
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-        }
-
-        // Set new timeout to prevent excessive calls
-        scrollTimeout = setTimeout(function() {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            // Clear previous timeout
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
             }
-        }, 10); // Small delay to prevent flickering
-    });
+
+            // Set new timeout to prevent excessive calls
+            scrollTimeout = setTimeout(function() {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }, 10); // Small delay to prevent flickering
+        });
+    }
 });
 
 // WhatsApp Integration Functions
@@ -143,3 +145,67 @@ function toggleMobileMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 }
+
+// Contact Card Functions
+
+// Open WhatsApp Chat
+function openWhatsAppChat() {
+    const phone = '919564827858';
+    const message = 'Hello, I would like to know more about your tour packages.';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// Make Phone Call
+function makePhoneCall() {
+    window.location.href = 'tel:+919564827858';
+}
+
+// Modal Functions
+function openInquiryModal() {
+    const modal = document.getElementById('inquiryModal');
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeInquiryModal() {
+    const modal = document.getElementById('inquiryModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+    // Reset form
+    document.getElementById('inquiryForm').reset();
+}
+
+// Submit Inquiry Form
+function submitInquiry(event) {
+    event.preventDefault();
+
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Format message for WhatsApp
+    const fullMessage = `Subject: ${subject}\n\nMessage: ${message}`;
+    const phone = '919564827858';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(fullMessage)}`;
+
+    // Open WhatsApp
+    window.open(url, '_blank');
+
+    // Close modal
+    closeInquiryModal();
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('inquiryModal');
+    if (event.target === modal) {
+        closeInquiryModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeInquiryModal();
+    }
+});

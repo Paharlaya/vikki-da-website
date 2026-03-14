@@ -14,9 +14,9 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <span class="logo-main">DEPEMBLIM</span>
-                <span class="logo-sub">tours & travels</span>
+            <div class="nav-brand">
+                <h1 class="nav-title">DE'PEMBLIN</h1>
+                <p class="nav-subtitle">Tours & Travels</p>
             </div>
             <div class="nav-links" id="navLinks">
                 <a href="#tours" class="nav-link">Tours</a>
@@ -34,7 +34,6 @@
     <section class="intro">
         <div class="intro-content">
             <h1 class="intro-title">Explore the<br>Eastern Himalayas</h1>
-            <p class="intro-subtitle">Curated travel experiences across<br>Darjeeling, Sikkim and Bhutan</p>
         </div>
         <div class="intro-image">
             <img src="assets/images/hero.png" alt="Eastern Himalayas" loading="eager">
@@ -237,13 +236,26 @@
                 <!-- Card 15: Magical Nights -->
                 <div class="tour-card">
                     <div class="card-image">
-                        <img src="assets/images/a-red-panda-balancing-on-a-tree.jpg" alt="Magical Nights" loading="lazy">
+                        <img src="assets/images/nightwithclouds.jpg" alt="Magical Nights" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Magical Nights</h3>
                         <p class="card-duration">4 Nights / 5 Days</p>
                         <p class="card-description">Complete experience with Darjeeling, Mirik, Kalimpong to Pelling</p>
                         <a href="itineraries/magical-nights.html" class="card-link">View journey →</a>
+                    </div>
+                </div>
+
+                <!-- Card 16: Mesmerizing Hills -->
+                <div class="tour-card">
+                    <div class="card-image">
+                        <img src="assets/images/a-red-panda-balancing-on-a-tree.jpg" alt="Mesmerizing Hills" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Mesmerizing Hills</h3>
+                        <p class="card-duration">3 Nights / 4 Days</p>
+                        <p class="card-description">Darjeeling via Mirik with scenic Kalimpong exploration</p>
+                        <a href="itineraries/mesmerizing-hills.html" class="card-link">View journey →</a>
                     </div>
                 </div>
             </div>
@@ -295,11 +307,81 @@
         </div>
     </section>
 
+    <!-- Contact Cards Section -->
+    <section class="contact-cards">
+        <div class="contact-cards-container">
+            <div class="contact-card" onclick="openWhatsAppChat()">
+                <div class="contact-card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                </div>
+                <h3 class="contact-card-title">Send Message</h3>
+                <p class="contact-card-description">Chat with us on WhatsApp</p>
+            </div>
+
+            <div class="contact-card" onclick="makePhoneCall()">
+                <div class="contact-card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h3 class="contact-card-title">Call Now</h3>
+                <p class="contact-card-description">Speak directly with us</p>
+            </div>
+
+            <div class="contact-card" onclick="openInquiryModal()">
+                <div class="contact-card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <h3 class="contact-card-title">Send Inquiry</h3>
+                <p class="contact-card-description">Submit your questions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal -->
+    <div id="inquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeInquiryModal()">&times;</span>
+            <h2 class="modal-title">Send Your Inquiry</h2>
+            <form id="inquiryForm" onsubmit="submitInquiry(event)">
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What would you like to know?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tell us more about your travel plans..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-decoration"></div>
         <div class="footer-content">
-            <p>© 2026 Depemblim Tours & Travels</p>
-            <p>Darjeeling, India</p>
+            <div class="footer-main">
+                <img src="assets/images/logo.png" alt="Depemblim Tours & Travels" class="footer-logo">
+                <div class="footer-text-content">
+                    <div class="footer-info">
+                        <p class="footer-text">Crafting journeys through the Eastern Himalayas since 2016</p>
+                        <p class="footer-location">Vallima Cottage, Hooker Road • Darjeeling 734101</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+                <p>© 2026 Depemblim Tours & Travels • All rights reserved</p>
+            </div>
         </div>
     </footer>
 

@@ -1,40 +1,90 @@
-# vikki-da-website
+# DE'PEMBLIN Tours & Travels
 
-A simple static website to test GitHub Pages hosting before connecting a custom domain.
+A modern, minimalist travel website for Depemblim Tours & Travels, offering curated travel experiences across the Eastern Himalayas - Darjeeling, Sikkim, and Bhutan.
 
-## Live Site
+## 🌍 Live Site
+Visit: [https://vikki-da-site.github.io/](https://vikki-da-site.github.io/)
 
-Once deployed, the site will be available at:
+## 🏔️ About
+Depemblim Tours & Travels has been crafting journeys through the Eastern Himalayas since 2016. Based in Darjeeling, we specialize in personalized travel experiences across North Bengal and Sikkim's hill stations.
+
+## ✨ Features
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **16 Tour Packages**: Comprehensive itineraries from 2N/3D to 5N/6D
+- **Interactive UI**: Smooth animations and transitions
+- **Contact Integration**: WhatsApp booking and inquiry system
+- **Clean Architecture**: Minimalist design focusing on content and imagery
+
+## 📦 Tour Packages
+- Queen of Hills (2N/3D)
+- Lagoon Splendour Series (2N/3D)
+- Darjeeling Hills Charm (3N/4D)
+- Earthly Bliss (4N/5D)
+- Himalayan Glory (3N/4D)
+- Green Impression (5N/6D)
+- Himalayan Ecstasy/Odyssey/Journey (Various durations)
+- Mountain Fragrance/Tranquility (3N/4D)
+- Highland Sojourn (2N/3D)
+- Magical Nights (4N/5D)
+- Mesmerizing Hills (3N/4D)
+- Heavenly Bouquet (4N/5D)
+
+## 🛠️ Tech Stack
+- **HTML5**: Semantic markup
+- **CSS3**: Custom styling with responsive design
+- **JavaScript**: Interactive features and WhatsApp integration
+- **Google Fonts**: Inter font family
+- **GitHub Pages**: Hosting
+
+## 📁 Project Structure
 ```
-https://[your-username].github.io/vikki-da-website/
+vikki-da-site/
+├── index.html                 # Homepage
+├── assets/
+│   ├── css/
+│   │   └── style.css         # Main stylesheet
+│   ├── js/
+│   │   └── script.js         # JavaScript functionality
+│   └── images/               # All images and logo
+├── itineraries/              # 16 tour package pages
+│   ├── queen-of-hills.html
+│   ├── lagoon-splendour-01.html
+│   └── ...
+└── README.md                 # This file
 ```
 
-## Project Structure
+## 🚀 Deployment
+The site is automatically deployed via GitHub Pages when changes are pushed to the main branch.
 
+### To deploy updates:
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
 ```
-vikki-da-website/
-├── index.html    # Main landing page
-└── README.md     # This file
-```
 
-## Features
+## 🎨 Design Features
+- **Hero Section**: Animated background with fade-in effects
+- **Navigation**: Clean text-based branding "DE'PEMBLIN"
+- **Tour Cards**: Grid layout with hover effects
+- **Footer**: Centered logo with company information
+- **Color Scheme**: Navy blue (#0B1F3A), Gold accents (#F4B400), Red highlights (#D62828)
 
-- Clean, minimal HTML page
-- Responsive design
-- Modern gradient background
-- Success confirmation message
-- Mobile-friendly
+## 📱 Responsive Breakpoints
+- Desktop: 1200px+
+- Small Desktop: 1024px - 1199px
+- Tablet: 769px - 1023px
+- Mobile: Up to 768px
+- Small Mobile: Up to 480px
 
-## Deployment
+## 📞 Contact
+**Depemblim Tours & Travels**
+Vallima Cottage, Hooker Road
+Darjeeling 734101
+WhatsApp: [Contact via website]
 
-This site is configured to be deployed via GitHub Pages from the main branch.
+## 📄 License
+© 2026 Depemblim Tours & Travels. All rights reserved.
 
-## Technologies Used
-
-- HTML5
-- CSS3 (inline styling)
-- No external dependencies
-
-## Purpose
-
-This is a test deployment to verify GitHub Pages functionality before configuring a custom domain.
+---
+*Crafting journeys through the Eastern Himalayas since 2016*
