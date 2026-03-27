@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>https://depemblim.com/</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Itinerary Pages -->
+  <url>
+    <loc>https://depemblim.com/itineraries/darjeeling-hills-charm.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/earthly-bliss.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/green-impression.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/heavenly-bouquet.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/highland-sojourn.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/himalayan-ecstasy.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/himalayan-glory.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/himalayan-journey.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/himalayan-odyssey.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/lagoon-splendour-01.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/lagoon-splendour-02.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/magical-nights.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/mesmerizing-hills.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/mountain-fragrance.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/mountain-tranquility.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://depemblim.com/itineraries/queen-of-hills.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
